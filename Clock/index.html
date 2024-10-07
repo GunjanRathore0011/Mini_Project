@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+        body{
+            height: 100vh;
+            width: 100%;
+            border: 2px solid black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #container{
+            border: 2px solid black;
+        }
+        #timeHolder{
+            border: 2px solid black;
+            margin: 2px;
+        }
+        #clockHolder{
+            border: 2px solid black;
+            margin: 2px;
+        }
+        #currTime{
+            border: 2px solid black;
+            margin: 2px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="clockHolder">
+            <div id="timeHolder">
+                <h1 id="currTime"></h1>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    setInterval(() => {
+    let time=new Date().toLocaleTimeString();
+    document.querySelector('#currTime').innerText=time;
+    }, 1000);
+</script>
+</html>
