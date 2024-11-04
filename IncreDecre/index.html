@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Incre-Decre</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100%;
+            background-color: #A45A52;
+        }
+        #container{
+            /* border: 2px solid black; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            
+        }
+        #box{
+            display: flex;
+            flex-direction: row;
+            /* box-shadow:  0 0 2px black; */
+            background-color: white;
+            padding: 10px;
+            border-radius: 10px;
+            /* width: 5rem; */
+            /* height: 2rem; */
+            font-size: larger;
+        }
+        p{
+            margin: 4px;
+            /* background-color:aqua;*/
+            cursor: pointer;
+            font-weight: 400;
+            font-size: xx-large;
+            padding: 0 1rem;
+        }
+        .line{
+            font-size: xx-large;
+        }
+        #btn{
+            padding: 0.2rem 0.8rem;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h2>Increment & Decrement</h2>
+        <br>
+        <div id="box">
+            <p class="dec">- </p>
+            <div class="line"> &#124</div> 
+            <p class="value">0 </p>
+            <div class='line'> &#124</div> 
+            <p class="inc">+</p>
+        </div>
+        <br>
+        <button id="btn">Reset</button>
+    </div>
+    <script>
+
+        const resetHandler=()=>{
+            let newValue=value.textContent;
+            newValue=Number(newValue);
+            value.textContent=0;                
+        }
+        const incHandler=()=>{
+            let newValue=value.textContent;
+            newValue=Number(newValue);
+            value.textContent=++newValue;
+            console.log("increment");
+        }
+        const decHandler=()=>{
+            let newValue=value.textContent;
+            newValue=Number(newValue);
+            value.textContent=--newValue;
+            console.log("decrement");
+        }
+        const valueHandler=()=>{
+            console.log("Values");
+        }
+        document.getElementById('btn').addEventListener('click',resetHandler);
+        let decrease=document.querySelector('.dec');
+        decrease.addEventListener('click',decHandler);
+        let increase=document.querySelector('.inc');
+        increase.addEventListener('click',incHandler);
+        let value=document.querySelector('.value');
+        value.addEventListener('click',valueHandler);
+
+    </script>
+</body>
+</html>
